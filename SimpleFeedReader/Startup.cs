@@ -45,12 +45,14 @@ namespace SimpleFeedReader
 
             app.UseCsp(options => options
                 .BlockAllMixedContent()
-                .StyleSources(s => s.Self().UnsafeInline())
+                .StyleSources(s => s.Self())
                 .StyleSources(s => s.UnsafeInline())
+                .StyleSources(s => s.CustomSources("*.aspnetcdn.com"))
                 .FontSources(s => s.Self())
                 .FormActions(s => s.Self())
                 .FrameAncestors(s => s.Self())
                 .ImageSources(s => s.Self())
+                .ScriptSources(s => s.Self())
                 .ScriptSources(s => s.UnsafeInline())
             );
             
