@@ -57,6 +57,7 @@ namespace SimpleFeedReader
             //);
             
             app.UseStaticFiles();
+            app.UseCookiePolicy();
             app.UseMvc();
         }
     }
