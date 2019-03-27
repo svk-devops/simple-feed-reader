@@ -64,7 +64,7 @@ namespace SimpleFeedReader
             //    .ScriptSources(s => s.Self())
             //    .ScriptSources(s => s.UnsafeInline())
             //);
-            
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseMvc();
