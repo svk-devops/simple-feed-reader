@@ -51,7 +51,7 @@ namespace SimpleFeedReader
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
             app.UseReferrerPolicy(options => options.StrictOrigin());
             app.UseHsts(hsts => hsts.MaxAge(365).IncludeSubdomains());
-            app.UseForwardedHeaders
+        
 
             app.UseCsp(options => options
             //    .BlockAllMixedContent()
