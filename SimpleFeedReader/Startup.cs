@@ -43,18 +43,18 @@ namespace SimpleFeedReader
             app.UseReferrerPolicy(options => options.StrictOrigin());
             app.UseHsts(hsts => hsts.MaxAge(365).IncludeSubdomains());
 
-            app.UseCsp(options => options
-                .BlockAllMixedContent()
-                .StyleSources(s => s.Self())
-                .StyleSources(s => s.UnsafeInline())
-                .StyleSources(s => s.CustomSources("*.aspnetcdn.com"))
-                .FontSources(s => s.Self())
-                .FormActions(s => s.Self())
-                .FrameAncestors(s => s.Self())
-                .ImageSources(s => s.Self())
-                .ScriptSources(s => s.Self())
-                .ScriptSources(s => s.UnsafeInline())
-            );
+            //app.UseCsp(options => options
+            //    .BlockAllMixedContent()
+            //    .StyleSources(s => s.Self())
+            //    .StyleSources(s => s.UnsafeInline())
+            //    .StyleSources(s => s.CustomSources("*.aspnetcdn.com"))
+            //    .FontSources(s => s.Self())
+            //    .FormActions(s => s.Self())
+            //    .FrameAncestors(s => s.Self())
+            //    .ImageSources(s => s.Self())
+            //    .ScriptSources(s => s.Self())
+            //    .ScriptSources(s => s.UnsafeInline())
+            //);
             
             app.UseStaticFiles();
             app.UseMvc();
