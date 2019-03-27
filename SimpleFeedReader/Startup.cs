@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,8 +20,7 @@ namespace SimpleFeedReader
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<NewsService>();
-            services.AddAutoMapper();
+            
             
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -28,6 +28,8 @@ namespace SimpleFeedReader
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.AddScoped<NewsService>();
+            services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
